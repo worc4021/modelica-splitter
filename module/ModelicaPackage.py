@@ -79,7 +79,7 @@ class ModelicaClass:
         if end_match:
             child = ModelicaClass(self.body[first+child_match.start():last], self)
             self.children.append(child)
-            logging.info(f'Found child {child_match.group("childname")} and child found {child.name}')
+            logging.info(f'Found {child_match.group("childtype")} {child_match.group("childname")}')
             self.body = self.body.replace(self.body[first+child_match.start():last], '')
         else:
             first+=child_match.end()
